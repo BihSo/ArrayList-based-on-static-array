@@ -41,11 +41,11 @@ public class ArrayListDET {
      * Automatically grows the ArrayListDET if the current index exceeds the capacity.
      * @param number The integer to be added.
      */
-    public void add(int number){ // O(n)
+    public void add(int number){ // O(1) In most of the time
         if (currentIndex >= size) {
-            grow(); // O(n) when currentIndex >= size
+            grow(); // O(n) When the basic array is full
         }
-        array[currentIndex++] = number; //O(1) when currentIndex < size
+        array[currentIndex++] = number; //O(1)
     }
     /**
      * Adds an element at a specific index in the ArrayListDET.
@@ -53,7 +53,7 @@ public class ArrayListDET {
      * @param index The index at which to add the element.
      * @param number The integer to be added.
      */
-    public void add(int index , int number){//O(n)
+    public void add(int index , int number){//O(n) In most of the time
         if (currentIndex >= size) {
             grow(); // O(n)
         }
@@ -164,7 +164,7 @@ public class ArrayListDET {
     public void remove(Integer target){//O(n)
         int i = indexOf(target); 
         if (i != -1 ) {
-            remove(i);// one element
+            remove(i);// one element only
         }
     }
     /**
